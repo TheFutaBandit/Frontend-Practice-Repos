@@ -59,7 +59,52 @@ body {
   }
 }
 
-.line, .cta-label, .word, .count, .digit {
+.line, .cta-label, .word, .count .digit {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+
+.line h1,
+.line p,
+.cta-label p,
+.count .digit h1 {
+  position: relative;
+  transform: translateY(120%);
+  will-change: transform;
+}
+
+#word-1 h1 {
+  transform: translateY(-120%);
+}
+
+#word-2 h1 {
+  transform: translateY(120%);
+}
+
+.block{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.divider {
+  transform: scaleY(0%);
+}
+
+.hero-img {
+  transform: scale(1.5);
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .cta {
+    width: 90%;
+  }
+}
+
 

@@ -1,7 +1,115 @@
+"use client"
 import Image from "next/image";
 import {ArrowRight} from "lucide-react";
+import gsap from "gsap";
+import CustomEase from "gsap/CustomEase";
+import { useEffect } from "react";
+
+gsap.registerPlugin(CustomEase);
+CustomEase.create("hop", "0.9, 0, 0.1, 1");
+
 
 export default function Home() {
+  useEffect(() => {
+    const tl = gsap.timeline({
+      delay: 0.3,
+      defaults: {
+        ease: "hop",
+      },
+    });
+
+    const counts = gsap.utils.toArray<HTMLElement>(".count");
+
+    counts.forEach((count, index) => {
+      const digits = count.querySelectorAll(".digit h1");
+
+      tl.to(digits, {
+        y: "0%",
+        duration: 1,
+        stagger: 0.075
+      },
+        index * 1
+      )
+
+      if(index < counts.length) {
+        tl.to(digits, {
+          y: "-100%",
+          duration: 1,
+          stagger: 0.075
+        }, 
+          index * 1 + 1
+      )}
+    })
+
+    tl.to(".spinner", {
+      opacity: 0,
+      duration: 0.3
+    })
+
+    tl.to(".word h1", {
+        y: "0%",
+        duration: 1
+      }, "<"
+    );
+
+    tl.to(".divider", {
+      scaleY: "100%",
+      duration: 1,
+      onComplete: () => {
+        gsap.to(".divider", { opacity: 0, duration: 0.4, delay: 0.3});
+      }
+    });
+
+    tl.to("#word-1 h1", {
+      y: "100%",
+      duration: 1,
+      delay: 0.3
+    })
+
+    tl.to("#word-2 h1", {
+      y: "-100%",
+      duration: 1,
+    }, "<"
+  );
+
+    tl.to(".block", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+      duration: 1,
+      stagger: 0.1,
+      delay: 0.75,
+      onStart: () => {
+        gsap.to(".hero-img", { scale: 1, duration: 2, ease: "hop"})
+      }
+    });
+
+    tl.to(
+      [".nav", ".line h1", ".line p"], {
+        y: "0%",
+        duration: 1.5,
+        stagger: 0.2
+      }, 
+       "<"
+    );
+
+    tl.to(
+      [".cta", ".cta-icon"], {
+        scale: 1,
+        duration: 1.5,
+        stagger: 0.75, 
+        delay: 0.75,
+      }, "<"
+    );
+
+    tl.to(".cta-label p", {
+      y: "0%",
+      duration: 1.5,
+      delay: 0.5,
+    }, "<"
+    );
+
+
+
+  }, [])
   return (
     <div className="main-container">
       <div className ="loader fixed top-0 left-0 w-screen h-svh overflow-hidden z-[2]">
@@ -12,10 +120,10 @@ export default function Home() {
         </div>
 
         <div className="intro-logo absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex gap-[0.25rem]">
-          <div className="relative left-[-0.5rem] pr-[0.10rem]" id="word-1">
+          <div className="word relative left-[-0.5rem] pr-[0.10rem]" id="word-1">
             <h1 className = "text-[2.5rem]"><span>Futo</span></h1>
           </div>
-          <div className="relative right-[-0.95rem]" id="word-2">
+          <div className="word relative right-[-0.95rem]" id="word-2">
             <h1 className = "text-[2.5rem]">Town</h1>
           </div>
         </div>
