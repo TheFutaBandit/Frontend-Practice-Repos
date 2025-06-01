@@ -14,7 +14,7 @@
 }
 
 @theme {
-  --font-pp-neue-montreal: 'PP Neue Montreal', sans-serif;
+  --pp-neue-montreal: 'PP Neue Montreal', impact;
   --extra-large: 45px;
   --spacing: 1rem;
 }
@@ -57,5 +57,9 @@ body {
     --webkit-font-smoothing: antialiased;
     color: #fff;
   }
+}
+
+.line, .cta-label, .word, .count, .digit {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
