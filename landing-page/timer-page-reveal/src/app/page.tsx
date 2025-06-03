@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import {ArrowRight} from "lucide-react";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
@@ -33,7 +32,7 @@ export default function Home() {
 
       if(index < counts.length) {
         tl.to(digits, {
-          y: "-100%",
+          y: "-120%",
           duration: 1,
           stagger: 0.075
         }, 
@@ -136,24 +135,24 @@ export default function Home() {
 
         <div className="counter absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-[2]">
           <div className="count absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex">
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">0</h1></div>
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">0</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">0</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">0</h1></div>
           </div>
           <div className="count absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex">
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">2</h1></div>
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">7</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">2</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">7</h1></div>
           </div>
           <div className="count absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex">
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">6</h1></div>
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">5</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">6</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">5</h1></div>
           </div>
           <div className="count absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex">
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">9</h1></div>
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">8</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">9</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">8</h1></div>
           </div>
           <div className="count absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex">
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">9</h1></div>
-            <div className="digit flex-1 pt-[1rem]"><h1 className = "text-[15rem] font-normal">9</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">9</h1></div>
+            <div className="digit flex-1"><h1 className = "text-[15rem] font-normal">9</h1></div>
           </div>
         </div>
       </div>
@@ -163,11 +162,11 @@ export default function Home() {
           <img className = "h-full w-full object-cover" src="/hero-image.jpg" alt="" />
         </div>
 
-        <div className="nav absolute translate-y-[-120%] top-0 w-screen py-[1.25em] px-[1.5em] flex items-center gap-[1.5em] will-change-transform">
+        <div className="nav absolute pt-[5svh] translate-y-[-120%] top-0 w-screen py-[1.25em] px-[1.5em] flex justify-center items-center gap-[1.5em] will-change-transform">
         <div className="flex-1">
           <a className = "capitalize text-[14px] font-bold" href="#">FutoTown</a>
         </div>
-        <div className="flex gap-[1.5em] justify-center">
+        <div className="flex gap-[1.5em] align-center justify-center">
           <a href="#">Rituals</a>
           <a href="#">Our Roots</a>
           <a href="#">Local Book</a>
@@ -180,7 +179,7 @@ export default function Home() {
         </div>
         </div>
 
-        <div className="header w-full h-full pt-[25svh] flex direction-col items-center gap-[1.5em]">
+        <div className="header w-full h-full pt-[15svh] flex direction-col justify-center items-center gap-[1.5em]">
           <div className="hero-copy">
             <div className="line">
               <h1><span>Rooted</span> in care,</h1>
@@ -188,7 +187,7 @@ export default function Home() {
             <div className="line">
               <h1><span>Grown</span> with Kindness,</h1>
             </div>
-            <div className="line">
+            <div className="line flex justify-center flex-wrap">
               <p>Skincare that stays true to the nature and to you</p>
             </div>
           </div>
